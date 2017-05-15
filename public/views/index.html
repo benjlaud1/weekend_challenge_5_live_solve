@@ -9,10 +9,12 @@
     <script src="/vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="/scripts/client.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body ng-app="movieApp">
     <div class="jumbotron">
       <h1>weekend_5_livesolve</h1>
     </div>
+    <a ng-href="#!search">search</a>
+    <a ng-href="#!favorites">favorites</a>
     <div ng-view class="">
 
     </div>
