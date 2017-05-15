@@ -1,6 +1,9 @@
 <h2>Search page</h2>
-{{vm}}
+<pre>{{vm | json}}</pre>
 <input type="text" ng-model="vm.searchText" class="form-control">
-<button type="button" name="button" class="btn btn-primary" ng-click="vm.search( vm.searchText )">Search Movie database</button>
+<button type="button" name="button" class="btn btn-primary" ng-click="vm.search(vm.searchText)">Search Movie database</button>
 
 <!-- movies repeat below here -->
+<div class="" ng-repeat="movie in vm.searchResult.details">
+  <button type="button" class="btn btn-primary" ng-click="vm.saveFavorite(movie)">Make Favorite</button> {{ movie.Title }} 
+</div>
