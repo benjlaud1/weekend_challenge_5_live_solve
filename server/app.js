@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require( 'body-parser' );
 var mongoose = require( 'mongoose' );
 var path = require( 'path' );
-var favorites = require( './routes/favorites' )
+var favorites = require( './routes/favorites' );
 
 var port = 5000;
 
@@ -24,7 +24,7 @@ app.get( '/', function ( req, res ) {
   res.sendFile( path.resolve( 'public/views/index.html' ) );
 }); // end base url GET
 
-app.post( '/favorites', favorites); // end favorites POST
+app.use( '/favorites', favorites); // end favorites POST
 
 app.listen( port, function () {
   console.log( 'the server is up on ', port );

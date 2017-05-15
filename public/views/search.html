@@ -1,9 +1,15 @@
 <h2>Search page</h2>
-<pre>{{vm | json}}</pre>
-<input type="text" ng-model="vm.searchText" class="form-control">
-<button type="button" name="button" class="btn btn-primary" ng-click="vm.search(vm.searchText)">Search Movie database</button>
+<!-- <pre>{{vm | json}}</pre> -->
+<div class="col-xs-12">
+  <input type="text" ng-model="vm.searchText" class="form-control">
+  <button type="button" name="button" class="btn btn-primary" ng-click="vm.search(vm.searchText)">Search Movie database</button>
+</div>
 
 <!-- movies repeat below here -->
-<div class="" ng-repeat="movie in vm.searchResult.details">
-  <button type="button" class="btn btn-primary" ng-click="vm.saveFavorite(movie)">Make Favorite</button> {{ movie.Title }} 
+
+<div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="movie in vm.searchResult.details">
+  <hr>
+  <h2 class="col-xs-12">{{ movie.Title }} | {{ movie.Year }}</h2>
+  <img ng-src="{{ movie.Poster }}" class="col-xs-12">
+  <button type="button" class="btn btn-primary" ng-click="vm.saveFavorite(movie)">Make Favorite</button>
 </div>
